@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+          width: 100%;
+          height: 100%;
+          margin: 24px;
+          padding: 10px 0;
+          background-color:#f5f5f5;
+          color: #000000;
+        }
+        .button {
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 10px;
+          background-color: #2d3748;
+        }
+        .tagCenter{
+          display: flex;
+          justify-content: center;
+        }
+      </style>
+</head>
+<body>
+    <div>
+        <p><b>Salesbox</b></p>
+        <p>このたびはSalesboxに会員登録いただきまして、誠にありがとうございます。</p>
+        <p>登録の手続きはまだ完了していません。以下の「登録を完了する」ボタンをクリックすると、登録が完了します。</p>
+        <div class="tagCenter">
+            <a class="button" href="{{url}}">登録を完了する</a>
+        </div>
+        <p>登録完了すると、アカウントが有効になり、Salesboxに参加できるようになります。</p>
+        <p>クリックしてもボタンが動作しない場合、以下URLをブラウザにコピーしてアクセスしてください。</p>
+        <p>{{url}}</p>
+        <p>なお、このメールの内容に覚えのない方は、お手数でございますが、破棄していただきますようお願い申し上げます。</p>
+    </div>
+</body>

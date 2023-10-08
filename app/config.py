@@ -1,6 +1,6 @@
 from typing import Any, Dict, Optional
 
-from pydantic import BaseSettings, validator
+from pydantic import BaseSettings, EmailStr, validator
 from sqlalchemy.engine import URL
 
 
@@ -30,6 +30,14 @@ class Settings(BaseSettings):
     AMOUNT_PER_DOWNLOAD: int
     AMOUNT_PER_JOB_ITEM: int
     HASHIDS_SALT: str
+
+    MAIL_USERNAME: str
+    MAIL_PASSWORD: str
+    MAIL_PORT: int
+    MAIL_SERVER: str
+    MAIL_FROM: EmailStr
+    MAIL_STARTTLS: bool
+    MAIL_SSL_TLS: bool
 
     CLIENT_ID: str
     CLIENT_SECRET: str

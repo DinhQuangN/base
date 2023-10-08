@@ -13,6 +13,10 @@ sqlmodel = "^0.0.8"
 pydantic = {extras = ["dotenv"], version = "^1.10.2"}
 uvicorn = {extras = ["uvloop"], version = "^0.23.1"}
 psycopg2 = "^2.9.3"
+python-jose = "^3.3.0"
+passlib = "^1.7.4"
+fastapi-mail = "1.2.0"
+bcrypt = "^4.0.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.8.0"

@@ -6,31 +6,18 @@ from sqlalchemy import TIMESTAMP, Column, Integer, String, func
 from sqlmodel import Field, SQLModel
 
 
-class GenderCode(str, enum.Enum):
-    Male = "MALE"
-    Female = "FE_MALE"
+class RoleCodeTree(str, enum.Enum):
+    Tree = "TREE"
+    Pot = "POT"
 
 
-class RoleCode(str, enum.Enum):
-    User = "USER"
-    Admin = "ADMIN"
-
-
-class User(SQLModel, table=True):
-    __tablename__: str = "users"
+class Category(SQLModel, table=True):
+    __tablename__: str = "categories"
     id: Optional[int] = Field(default=None, primary_key=True)
-    email: str = Field(
-        nullable=False, sa_column=Column(String(255), default=None, unique=True)
-    )
-    password: str = Field(nullable=False, sa_column=Column(String(255)), default=None)
     name: Optional[str] = Field(
         nullable=True, sa_column=Column(String(255)), default=None
     )
-    email_verified_at: datetime = Field(nullable=True, default=None)
-    gender_code: Optional[GenderCode]
-    role_code: Optional[str] = Field(
-        nullable=True, sa_column=Column(String(20)), default=None
-    )
+    role_code: Optional[RoleCodeTree]
     created_at: datetime = Field(
         default=None, sa_column=Column(TIMESTAMP, server_default=func.now())
     )
